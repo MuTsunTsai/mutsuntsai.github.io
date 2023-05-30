@@ -1,0 +1,11 @@
+{
+	"files.exclude": {
+		"**/node_modules": true
+	},
+	"cSpell.words": [
+		"fontawesome",
+		"mutsuntsai",
+		"outfile",
+		"purgecss"
+	]
+}

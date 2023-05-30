@@ -1,0 +1,50 @@
+@media (prefers-color-scheme: dark) {
+	body {
+		overflow-y: scroll;
+	}
+
+	:root {
+		--bs-body-bg: #444;
+		--bs-body-color: #eee;
+		--bs-light-rgb: 70, 70, 70;
+		--bs-border-color: #666;
+	}
+
+	.nav-tabs {
+		--bs-nav-tabs-border-color: #999;
+		--bs-nav-tabs-link-active-color: white;
+		--bs-nav-tabs-link-hover-border-color: #999 #999 #999;
+		--bs-nav-tabs-link-active-bg: #444;
+		--bs-nav-tabs-link-active-border-color: #999 #999 #444;
+	}
+
+	.modal {
+		--bs-modal-bg: #444;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #aaa6 !important;
+	}
+
+	a.btn {
+		color: inherit !important;
+	}
+
+	.form-control,
+	.form-select,
+	.form-control:focus,
+	.form-check-input,
+	.form-range::-webkit-slider-runnable-track {
+		background-color: var(--bs-gray-800);
+		border-color: var(--bs-gray-600);
+		color: white;
+	}
+
+	.form-select {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+	}
+
+	.card {
+		--bs-card-bg: #555;
+	}
+}
