@@ -12,18 +12,18 @@
 	"devDependencies": {
 		"@types/gulp-load-plugins": "^0.0.34",
 		"gulp": "^4.0.2",
-		"gulp-fontawesome": "^1.0.2",
+		"gulp-fontawesome": "^1.0.4",
 		"gulp-html-minifier-terser": "^7.1.0",
 		"gulp-load-plugins": "^2.0.8",
 		"gulp-newer": "^1.4.0",
 		"gulp-purgecss": "^5.0.0",
 		"gulp-replace": "^1.1.4",
 		"gulp-sass": "^5.1.0",
-		"sass": "^1.62.1",
+		"sass": "^1.72.0",
 		"vinyl-sourcemaps-apply": "^0.2.1"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.4.0",
-		"bootstrap": "^5.2.3"
+		"@fortawesome/fontawesome-free": "^6.5.1",
+		"bootstrap": "^5.3.3"
 	}
 }
