@@ -1,7 +1,10 @@
 import { defineConfig } from "@rsbuild/core";
-import purgeCss from "@fullhuman/postcss-purgecss";
+import { PurgeCSSPlugin } from "purgecss-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV === "production";
+
+// This is a hack to make purgecss-webpack-plugin working with rspack
+(Array.prototype as unknown as Set<unknown>).has = Array.prototype.includes;
 
 export default defineConfig({
 	dev: {
@@ -36,16 +39,18 @@ export default defineConfig({
 			root: "docs",
 		},
 	},
-	tools: !isProduction ? undefined : {
-		postcss: {
-			postcssOptions: {
-				plugins: [
-					purgeCss({
-						variables: true,
-						content: ["./src/public/index.html"],
-					}),
-				],
-			},
+	tools: {
+		rspack: (_, { appendPlugins, isDev }) => {
+			if(isDev) return;
+
+			// Using postcss-purgecss is an alternative,
+			// but that will result in chunks being processed separately.
+			appendPlugins(new PurgeCSSPlugin({
+				paths: ["./src/public/index.html"],
+				variables: true,
+				safelist: {},
+				blocklist: [],
+			}));
 		},
 	},
 });
