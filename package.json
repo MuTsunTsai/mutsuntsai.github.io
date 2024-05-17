@@ -4,27 +4,19 @@
 	"description": "Front-end tools by Mu-Tsun Tsai.",
 	"main": "index.js",
 	"scripts": {
-		"start": "serve -L -p 21000 docs"
+		"start": "rsbuild dev -o",
+		"build": "rsbuild build",
+		"preview": "rsbuild preview"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/gulp-load-plugins": "^0.0.37",
-		"gulp": "^5.0.0",
-		"gulp-fontawesome": "^1.0.4",
-		"gulp-html-minifier-terser": "^7.1.0",
-		"gulp-load-plugins": "^2.0.8",
-		"gulp-newer": "^1.4.0",
-		"gulp-purgecss": "^6.0.0",
-		"gulp-replace": "^1.1.4",
-		"gulp-sass": "^5.1.0",
-		"sass": "^1.77.2",
-		"serve": "^14.2.3",
-		"vinyl-sourcemaps-apply": "^0.2.1"
+		"@fullhuman/postcss-purgecss": "^6.0.0",
+		"@rsbuild/core": "^0.6.15",
+		"@types/node": "^20.12.12"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.5.2",
 		"bootstrap": "^5.3.3"
 	}
 }
