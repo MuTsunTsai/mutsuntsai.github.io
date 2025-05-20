@@ -1,4 +1,5 @@
 import { defineConfig } from "@rsbuild/core";
+import { pluginSass } from "@rsbuild/plugin-sass";
 import { PurgeCSSPlugin } from "purgecss-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -30,15 +31,19 @@ export default defineConfig({
 		dataUriLimit: 100,
 		legalComments: "none",
 		polyfill: "off",
-		minify: {
-			htmlOptions: {
-				removeComments: true,
-			},
-		},
 		distPath: {
 			root: "docs",
 		},
 	},
+	plugins: [
+		pluginSass({
+			sassLoaderOptions: {
+				sassOptions: {
+					silenceDeprecations: ["mixed-decls", "color-functions", "import", "global-builtin"],
+				},
+			},
+		}),
+	],
 	tools: {
 		rspack: (_, { appendPlugins, isDev }) => {
 			if(isDev) return;
